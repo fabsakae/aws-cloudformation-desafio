@@ -1,0 +1,62 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Exemplo simples — VPC + Subnet + Security Group + EC2
+
+Parameters:
+  KeyName:
+    Type: AWS::EC2::KeyPair::KeyName
+    Description: "Nome do key pair existente (necessário para SSH)"
+  InstanceType:
+    Type: String
+    Default: t2.micro
+    AllowedValues: [t2.micro, t3.micro]
+    Description: "Tipo da instância EC2"
+
+Resources:
+  MinhaVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: dio-desafio-vpc
+
+  MinhaSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref MinhaVPC
+      CidrBlock: 10.0.1.0/24
+      MapPublicIpOnLaunch: true
+      AvailabilityZone: !Select [0, !GetAZs '']
+      Tags:
+        - Key: Name
+          Value: dio-desafio-subnet
+
+  MeuSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: "Allow SSH"
+      VpcId: !Ref MinhaVPC
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 177.37.149.123
+          Description: "Permite SSH para administração"
+      Tags:
+        - Key: Name
+          Value: dio-desafio-sg
+
+  MinhaInstancia:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: !Ref InstanceType
+      ImageId: ami-0c02fb55956c7d316 # Amazon Linux 2 (us-east-1, fixo só p/ teste de lint)
+      KeyName: !Ref KeyName
+      SubnetId: !Ref MinhaSubnet
+      SecurityGroupIds:
+        - !Ref MeuSecurityGroup
+      Tags:
+        - Key: Name
+          Value: dio-desafio-instance
