@@ -98,7 +98,7 @@ Resources:
           Value: dio-desafio-instance
 ```
 
-Salve o arquivo (CTRL+O, depois ENTER, depois CTRL+X para sair).
+Salvar o arquivo (CTRL+O, depois ENTER, depois CTRL+X para sair).
 
 Próximo passo:
 
@@ -106,7 +106,7 @@ Mostrar a saída do arquivo infra.yaml criado.:
 ```
 ls -l ~/aws-cloudformation-desafio/templates
 ```
-## próxima etapa: criar e ativar a venv, depois instalar o cfn-lint e o checkov.
+## Próxima etapa: criar e ativar a venv, depois instalar o cfn-lint e o checkov.
 
 Passo 1 — Criar ambiente virtual
 No diretório do projeto (raiz, não dentro de templates/):
@@ -132,7 +132,7 @@ checkov --version
 ## Rodar as validações do ´infra.yam´.
 Passo 1 — Validar sintaxe com cfn-lint
 
-No diretório raiz do projeto (~/aws-cloudformation-desafio), rode:
+No diretório raiz do projeto (~/aws-cloudformation-desafio), rodar:
 ```
 cfn-lint templates/infra.yaml
 ```
