@@ -17,7 +17,10 @@ O template cria:
 - Security Group (SSH e HTTP)
 - Instância EC2 (Amazon Linux 2)
 
-## Primeiro criamos o arquivo do template que você vai validar com o cfn-lint e checkov.
+## Primeiro criamos o arquivo do template que você vai validar com o cfn-lint e checkov
+***O Checkov é uma ferramenta de código aberto para análise estática de código-fonte que verifica a infraestrutura como código (IaC) em busca de configurações incorretas, vulnerabilidades de segurança e não conformidade com padrões regulatórios e melhores práticas. Ele suporta uma ampla gama de plataformas IaC, como Terraform, CloudFormation, Kubernetes e Dockerfile, e é integrado a pipelines de CI/CD para detetar problemas antes da implementação.***
+
+***AWS CloudFormation O Linter (cfn-lint) é uma ferramenta de código aberto que você pode usar para realizar uma validação detalhada em seus modelos.***
 
 Passo 1 — Criar estrutura de pastas
 
