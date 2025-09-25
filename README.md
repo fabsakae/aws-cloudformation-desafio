@@ -154,10 +154,12 @@ sudo apt install -y git python3-pip zip unzip
 Instalei git e Python/pip que usaremos para ferramentas locais.
 
 Instalar ferramentas de validação/lint local (nesse momento não usarei AWS):
+
 ```
 python3 -m pip install --user cfn-lint checkov
 ```
-# garantir ~/.local/bin no PATH (adicionar no .bashrc se necessário)
+garantir ~/.local/bin no PATH (adicionar no .bashrc se necessário)
+
 ```
 export PATH="$HOME/.local/bin:$PATH"
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
@@ -165,4 +167,6 @@ echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 Por que o cfn-lint valida a sintaxe e boas práticas de CloudFormation localmente; checkov faz análises de segurança/infra-as-code.
 
 Nota: aws cloudformation validate-template usa a API da AWS — exige credenciais e rede. Enquanto não tenho acesso, usei cfn-lint + checkov.
+
+---
 <img width="1360" height="768" alt="version" src="https://github.com/user-attachments/assets/995b7bd8-6d5d-4302-ab7e-dc04c02a83a9" />
