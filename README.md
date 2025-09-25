@@ -241,4 +241,5 @@ jobs:
 
 <img width="1355" height="467" alt="github-action-cloudformation" src="https://github.com/user-attachments/assets/531daf7a-adaf-49ea-b090-35eca8f0468b" />
 
+<img width="1315" height="595" alt="validate" src="https://github.com/user-attachments/assets/8283e3fb-5fc5-41cc-afb7-f09418332187" />
 
