@@ -20,7 +20,7 @@ O template cria:
 ## Primeiro criei o arquivo do template para validar o cfn-lint e checkov
 ***O Checkov é uma ferramenta de código aberto para análise estática de código-fonte que verifica a infraestrutura como código (IaC) em busca de configurações incorretas, vulnerabilidades de segurança e não conformidade com padrões regulatórios e melhores práticas. Ele suporta uma ampla gama de plataformas IaC, como Terraform, CloudFormation, Kubernetes e Dockerfile, e é integrado a pipelines de CI/CD para detetar problemas antes da implementação.***
 
-***AWS CloudFormation O Linter (cfn-lint) é uma ferramenta de código aberto que você pode usar para realizar uma validação detalhada em seus modelos.***
+***AWS CloudFormation O Linter (cfn-lint) é uma ferramenta de código aberto que você pode usar para realizar uma validação detalhada nos modelos.***
 
 Passo 1 — Criar estrutura de pastas
 
@@ -122,6 +122,7 @@ Passo 2 — Ativar ambiente
 source .venv/bin/activate
 ```
 No prompt vai aparecer (.venv - pasta especial criada dentro do seu projeto para isolar as dependências Python) no começo → isso indica que a venv está ativa.
+
 Passo 3 — Instalar pacotes dentro da venv
 ```
 pip install --upgrade pip
@@ -147,29 +148,29 @@ checkov -f templates/infra.yaml
 <img width="1360" height="768" alt="aws-cloudformation-desafio" src="https://github.com/user-attachments/assets/27fe776b-2124-4a79-9914-cc950ba011e2" />
 <img width="1360" height="768" alt="checov2" src="https://github.com/user-attachments/assets/40b3cb1a-4f5b-497a-abcc-5d05f01d4273" />
 
-# Pré-requisitos (no WSL / Ubuntu)
-Atualizar o apt e instalar ferramentas básicas:
+## Início no WSL / Ubuntu:
+Atualizei o apt e instalei as ferramentas básicas:
 ```
 sudo apt update
 sudo apt install -y git python3-pip zip unzip
 ```
 
-Instalei git e Python/pip que usaremos para ferramentas locais.
+Instalei git e Python/pip que userei para ferramentas locais.
 
-Instalar ferramentas de validação/lint local (nesse momento não usarei AWS):
+Instalei ferramentas de validação/lint local (por enquanto não usarei AWS):
 
 ```
 python3 -m pip install --user cfn-lint checkov
 ```
-garantir ~/.local/bin no PATH (adicionar no .bashrc se necessário)
+garantir ~/.local/bin no PATH (adiciona o .bashrc se necessário)
 
 ```
 export PATH="$HOME/.local/bin:$PATH"
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 ```
-Por que o cfn-lint valida a sintaxe e boas práticas de CloudFormation localmente; checkov faz análises de segurança/infra-as-code.
+Por que o cfn-lint valida a sintaxe e boas práticas de CloudFormation localmente e o checkov faz análises de segurança/infra-as-code.
 
-Nota: aws cloudformation validate-template usa a API da AWS — exige credenciais e rede. Enquanto não tenho acesso, usei cfn-lint + checkov.
+### Nota: aws cloudformation validate-template usa a API da AWS — exige credenciais e rede. Enquanto não tenho acesso, usei cfn-lint + checkov.
 
 ---
 <img width="1360" height="768" alt="version" src="https://github.com/user-attachments/assets/995b7bd8-6d5d-4302-ab7e-dc04c02a83a9" />
