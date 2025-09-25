@@ -7,7 +7,7 @@ Implementar infraestrutura automatizada em AWS CloudFormation e documentar o pro
 ## Entregáveis
 - Template CloudFormation: `templates/infra.yaml`
 - Documentação: este `README.md`
-- (Opcional) Prints: `images/`
+- Prints: `images/`
 
 ## O que está no template
 O template cria:
