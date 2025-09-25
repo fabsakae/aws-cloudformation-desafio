@@ -78,7 +78,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
-          CidrIp: 0.0.0.0/0 # usei seu IP real
+          CidrIp: 0.0.0.0/0 # usei meu IP real
           Description: "Permite SSH apenas para administração"
       Tags:
         - Key: Name
